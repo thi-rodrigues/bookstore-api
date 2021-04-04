@@ -1,4 +1,4 @@
-package com.bookstore;
+package com.bookstore.service;
 
 import java.util.Arrays;
 
