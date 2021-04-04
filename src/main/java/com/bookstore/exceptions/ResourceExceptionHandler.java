@@ -1,4 +1,4 @@
-package com.bookstore.exception;
+package com.bookstore.exceptions;
 
 import javax.servlet.ServletRequest;
 

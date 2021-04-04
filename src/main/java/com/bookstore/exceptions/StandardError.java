@@ -1,4 +1,4 @@
-package com.bookstore.exception;
+package com.bookstore.exceptions;
 
 public class StandardError {
 
@@ -40,5 +40,4 @@ public class StandardError {
 	public void setError(String error) {
 		this.error = error;
 	}
-
 }

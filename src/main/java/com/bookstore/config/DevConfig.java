@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.bookstore.service.DBService;
+import com.bookstore.services.DBService;
 
 @Configuration
 @Profile("dev")

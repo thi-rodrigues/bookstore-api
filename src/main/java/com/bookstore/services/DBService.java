@@ -1,12 +1,12 @@
-package com.bookstore.service;
+package com.bookstore.services;
 
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bookstore.domain.Categoria;
-import com.bookstore.domain.Livro;
+import com.bookstore.domains.Categoria;
+import com.bookstore.domains.Livro;
 import com.bookstore.repositories.CategoriaRepository;
 import com.bookstore.repositories.LivroRepository;
 

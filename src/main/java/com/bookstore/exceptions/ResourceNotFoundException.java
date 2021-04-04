@@ -1,13 +1,9 @@
-package com.bookstore.exception;
+package com.bookstore.exceptions;
 
-import com.bookstore.domain.Categoria;
+import com.bookstore.domains.Categoria;
 
 public class ResourceNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
-
-//	public ResourceNotFoundException(String message, Throwable cause) {
-//		super(message, cause);
-//	}
 
 	public ResourceNotFoundException(Object id) {
 		super("Objeto não encontrado! " + "Id: " + id + ", Tipo: " + Categoria.class.getName());
