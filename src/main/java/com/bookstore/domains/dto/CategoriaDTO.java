@@ -1,11 +1,21 @@
 package com.bookstore.domains.dto;
 
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+
 import com.bookstore.domains.Categoria;
 
 public class CategoriaDTO {
 
 	private Integer id;
+	
+	@NotEmpty(message = "Campo NOME é requerido!")
+	@Length(min = 3, max = 100, message = "Campo NOME deve ter entre {min} e {max} caracteres")
 	private String nome;
+	
+	@NotEmpty(message = "Campo DESCRIÇÃO é requerido!")
+	@Length(min = 3, max = 200, message = "O campo DESCRIÇÃO deve ter entre {min} e {max} caracteres")
 	private String descricao;
 
 	public CategoriaDTO() {

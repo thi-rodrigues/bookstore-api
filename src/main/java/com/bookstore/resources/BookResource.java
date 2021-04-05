@@ -4,8 +4,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -22,6 +25,7 @@ import com.bookstore.domains.Book;
 import com.bookstore.domains.dto.BookDTO;
 import com.bookstore.services.BookService;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping(value = "/books")
 public class BookResource {
@@ -46,7 +50,7 @@ public class BookResource {
 	
 	@PostMapping
 	public ResponseEntity<Book> create(@RequestParam(value="categoria", defaultValue = "0") Integer id_cat, 
-									   @RequestBody Book book){
+									   @RequestBody @Valid Book book){
 		Book newBook = service.create(id_cat, book);
 		URI uri = ServletUriComponentsBuilder.fromCurrentContextPath()
 				.path("/books/{id}").buildAndExpand(newBook.getId()).toUri();
@@ -54,7 +58,7 @@ public class BookResource {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<Book> update(@PathVariable Integer id, @RequestBody Book book){
+	public ResponseEntity<Book> update(@PathVariable Integer id, @RequestBody @Valid Book book){
 		Book bookUpdate = service.update(id, book);
 		return ResponseEntity.ok().body(bookUpdate);
 	}
