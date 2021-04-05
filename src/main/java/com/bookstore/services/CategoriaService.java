@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import com.bookstore.domains.Categoria;
 import com.bookstore.domains.dto.CategoriaDTO;
+import com.bookstore.exceptions.DataIntegrityViolationExceptions;
 import com.bookstore.exceptions.ResourceNotFoundException;
 import com.bookstore.repositories.CategoriaRepository;
 
@@ -40,6 +42,10 @@ public class CategoriaService {
 
 	public void deleteById(Integer id) {
 		findById(id);
-		repository.deleteById(id);
+		try {
+			repository.deleteById(id);
+		} catch (DataIntegrityViolationException e) {
+			throw new DataIntegrityViolationExceptions();
+		}
 	}
 }
