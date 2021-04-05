@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bookstore.domains.Categoria;
-import com.bookstore.domains.Livro;
+import com.bookstore.domains.Book;
 import com.bookstore.repositories.CategoriaRepository;
-import com.bookstore.repositories.LivroRepository;
+import com.bookstore.repositories.BookRepository;
 
 @Service
 public class DBService {
@@ -17,7 +17,7 @@ public class DBService {
 	private CategoriaRepository categoriaRepository;
 
 	@Autowired
-	private LivroRepository livroRepository;
+	private BookRepository livroRepository;
 
 	public void instanciaBaseDeDados() {
 		
@@ -25,11 +25,11 @@ public class DBService {
 		Categoria cat2 = new Categoria(null, "Ficcção Científica", "Ficcção científica");
 		Categoria cat3 = new Categoria(null, "Biografias", "Livros de Biografias");
 
-		Livro l1 = new Livro(null, "Clean code", "Robert Martin", "Lorem ipsum", cat1);
-		Livro l2 = new Livro(null, "Engenharia de Software", "Louis V. Gerstner", "Lorem ipsum", cat1);
-		Livro l3 = new Livro(null, "The Time Machine", "H.G. Wells", "Lorem ipsum", cat2);
-		Livro l4 = new Livro(null, "The War of the Worlds", "H.G. Wells", "Lorem ipsum", cat2);
-		Livro l5 = new Livro(null, "I, Robot", "Isaac Asimov", "Lorem ipsum", cat2);
+		Book l1 = new Book(null, "Clean code", "Robert Martin", "Lorem ipsum", cat1);
+		Book l2 = new Book(null, "Engenharia de Software", "Louis V. Gerstner", "Lorem ipsum", cat1);
+		Book l3 = new Book(null, "The Time Machine", "H.G. Wells", "Lorem ipsum", cat2);
+		Book l4 = new Book(null, "The War of the Worlds", "H.G. Wells", "Lorem ipsum", cat2);
+		Book l5 = new Book(null, "I, Robot", "Isaac Asimov", "Lorem ipsum", cat2);
 
 		cat1.setLivros(Arrays.asList(l1, l2));
 		cat2.setLivros(Arrays.asList(l3, l4, l5));

@@ -2,19 +2,19 @@ package com.bookstore.domains.dto;
 
 import java.io.Serializable;
 
-import com.bookstore.domains.Livro;
+import com.bookstore.domains.Book;
 
-public class LivroDTO implements Serializable {
+public class BookDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Integer id;
 	private String titulo;
 
-	public LivroDTO() {
+	public BookDTO() {
 		super();
 	}
 
-	public LivroDTO(Livro livro) {
+	public BookDTO(Book livro) {
 		super();
 		this.id = livro.getId();
 		this.titulo = livro.getTitulo();

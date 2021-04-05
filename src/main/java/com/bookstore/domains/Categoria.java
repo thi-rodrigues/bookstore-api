@@ -20,7 +20,7 @@ public class Categoria implements Serializable {
 	private String descricao;
 
 	@OneToMany(mappedBy = "categoria")
-	private List<Livro> livros;
+	private List<Book> livros;
 
 	public Categoria() {
 		super();
@@ -57,11 +57,11 @@ public class Categoria implements Serializable {
 		this.descricao = descricao;
 	}
 
-	public List<Livro> getLivros() {
+	public List<Book> getLivros() {
 		return livros;
 	}
 
-	public void setLivros(List<Livro> livros) {
+	public void setLivros(List<Book> livros) {
 		this.livros = livros;
 	}
 
